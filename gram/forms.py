@@ -14,10 +14,11 @@ class NewPostForm(forms.ModelForm):
         
         class Meta:
             model = Post
-            field = ('image','caption')
+            fields = ('image','caption')
             
             
 class CreateUserForm(UserCreationForm):
+    
     class Meta:
         model = User
-        field = ['username','email','password1','password2']
+        fields = ['username','email','password1','password2']
