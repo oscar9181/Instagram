@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="/static/css/insta.css">
     <title>Instagram</title>
 </head>
+<style>
+    .hello{
+    font-size: 18px;
+    color: red;
+    margin-right: 20px ;
+    }
+</style>
+
 <body>
     <nav class ="nav">
         <div class="wrapper">
@@ -141,6 +149,8 @@
                    </div><!-- Drop down menu ends  --> 
             </div>
         </div>
+        <span class="hello">Hello,{{request.user}}</span>
+        <span><a class="hello" href="{% url 'logout' %}">Logout</a></span>
     </nav>
     {% block content %} {% endblock content %}
 </body>
