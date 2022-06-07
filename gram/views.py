@@ -7,21 +7,25 @@ from django.contrib.auth import authenticate,login,logout
 
 from django.contrib import messages
 
-from.forms import CreateUserForm
+from.forms import CreateUserForm, NewPostForm
+
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required(login_url='login')
 def insta(request):
     return render(request,'instagram/insta.html')
 
 
 
 def registerPage(request):
-    form=CreateUserForm()
-    
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
+    if request.user.is_authenticated:
+        return redirect('instagram')
+    else:
+      form=CreateUserForm()
+      if request.method == 'POST':
+          form = CreateUserForm(request.POST)
+          if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request,'Account was created for' + user)
@@ -53,3 +57,15 @@ def loginPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
+def post(request):
+    if request.method == 'POST':
+        image = request.FILES.get('image')
+        caption = request.POST.get('caption')
+        
+        
+        new_post = Post.objects.create(request, image=image, caption=caption)
+        new_post.save()
+        return redirect('instagram')
+    
+    return render(request,'instagram/NewPost.html')
