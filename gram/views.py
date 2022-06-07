@@ -14,8 +14,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='login')
 def insta(request): 
+    picture = Profile.objects.all()
     images = Post.objects.all()
-    return render(request,'instagram/insta.html', {'images': images})
+    return render(request,'instagram/insta.html', {'images': images},{'picture': picture})
 
 
 
@@ -75,4 +76,7 @@ def post(request):
     return render(request,'instagram/NewPost.html')
 
 def profile(request):
-    return render(request,'instagram/profile.html')
+    
+    profile = Profile.objects.get(user=request.user)
+    
+    return render(request,'instagram/profile.html',{'profile': profile})
