@@ -1,6 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render,redirect
-from.models import Post
+from.models import Post, Profile
 from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth import authenticate,login,logout
@@ -27,7 +27,10 @@ def registerPage(request):
       if request.method == 'POST':
           form = CreateUserForm(request.POST)
           if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            user.save()
+            profile = Profile.objects.create(user=user)
+            profile.save()
             user = form.cleaned_data.get('username')
             messages.success(request,'Account was created for' + user)
             
