@@ -13,8 +13,9 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required(login_url='login')
-def insta(request):
-    return render(request,'instagram/insta.html')
+def insta(request): 
+    images = Post.objects.all()
+    return render(request,'instagram/insta.html', {'images': images})
 
 
 
@@ -58,14 +59,14 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
+
 def post(request):
     if request.method == 'POST':
         image = request.FILES.get('image')
         caption = request.POST.get('caption')
-        
-        
-        new_post = Post.objects.create(request, image=image, caption=caption)
+        new_post = Post.objects.create(author=request.user, image=image, caption=caption)
         new_post.save()
         return redirect('instagram')
-    
+         
+        
     return render(request,'instagram/NewPost.html')

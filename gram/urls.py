@@ -9,3 +9,4 @@ urlpatterns = [
     
     path('',views.insta,name='instagram')
 ]
+
