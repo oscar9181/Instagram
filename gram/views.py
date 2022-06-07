@@ -59,7 +59,7 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
-
+@login_required(login_url='login')
 def post(request):
     if request.method == 'POST':
         image = request.FILES.get('image')
@@ -70,3 +70,6 @@ def post(request):
          
         
     return render(request,'instagram/NewPost.html')
+
+def profile(request):
+    return render(request,'instagram/profile.html')

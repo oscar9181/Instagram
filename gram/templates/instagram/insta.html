@@ -151,7 +151,11 @@
             </div>
         </div>
         <span class="hello">Hello,{{request.user}}</span>
+        
+        <span><a class="hello" href="{% url 'profile' %}">Profile</a></span>
+        <span><a class="hello" href="{% url 'post' %}">Add Post</a></span>
         <span><a class="hello" href="{% url 'logout' %}">Logout</a></span>
+        
     </nav>
     {% block content %}{% endblock content %}
 
