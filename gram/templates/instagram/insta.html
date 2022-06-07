@@ -175,6 +175,20 @@
                     </path>
                    </svg>
                 <p>{{post.date.url}}</p>
+
+                <h2> COMMENTS</h2>
+                {% if not post.comments.all %}
+                     No Comments Yet...<a href="#">Add One</a>
+                {% else %}
+                  {%  for comment in post.comments.all %}
+                  <strong>
+                     {{ comment.name }} {{ comment.date }}
+
+                  </strong>
+                  <br/>
+                  {{ comment.body }}
+                  {% endfor %}
+                {% endif %}
                 </div>
             </div>
         </div>

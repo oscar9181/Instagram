@@ -24,8 +24,9 @@ class Profile(models.Model):
     
 class Comment(models.Model):
     user = models.ForeignKey(Profile,on_delete=models.CASCADE)
-    post = models.ForeignKey(Post,on_delete=models.CASCADE)
+    post = models.ForeignKey(Post,related_name='comments',on_delete=models.CASCADE)
     body = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
          return self.body[0:50]
