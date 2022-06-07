@@ -22,5 +22,12 @@ class Profile(models.Model):
     bio  =  models.TextField(null=True)
     
     
-
+class Comment(models.Model):
+    user = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE)
+    body = models.TextField()
+    
+    def __str__(self):
+         return self.body[0:50]
+      
       

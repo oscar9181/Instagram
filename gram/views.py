@@ -1,4 +1,3 @@
-from multiprocessing import context
 from django.shortcuts import render,redirect
 from.models import Post, Profile
 from django.contrib.auth.forms import UserCreationForm
@@ -16,7 +15,7 @@ from django.contrib.auth.decorators import login_required
 def insta(request): 
     picture = Profile.objects.all()
     images = Post.objects.all()
-    return render(request,'instagram/insta.html', {'images': images},{'picture': picture})
+    return render(request,'instagram/insta.html',{'images': images,'picture':picture})
 
 
 
