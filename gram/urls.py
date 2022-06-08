@@ -10,6 +10,7 @@ urlpatterns = [
     path('login/',views.loginPage,name='login'),
     path('logout/',views.logoutUser,name='logout'),
     path('NewPost/',views.post,name='post'),
+    path('like-post/',views.like_post,name='like-post'),
     path('profile/',views.profile,name='profile'),
     path('comment/<int:pk>/',views.posted,name='add_comment')
     

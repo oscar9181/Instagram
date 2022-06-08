@@ -4,6 +4,10 @@
   }
   body {
     background-color: #ded1c1;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+    align-items: center;
   }
   .nav {
     position: absolute;

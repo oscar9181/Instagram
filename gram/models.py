@@ -24,7 +24,7 @@ class Post(models.Model):
 
 class Profile(models.Model):
     user = models.ForeignKey('auth.User',on_delete=models.CASCADE)
-    picture = models.ImageField(blank=True,null=True)
+    picture = models.ImageField(blank=True,null=True ,default='default.jpg')
     bio  =  models.TextField(null=True)
     
     
@@ -40,5 +40,10 @@ class Comment(models.Model):
     
     def __str__(self):
          return self.body[0:50]
+
+class LikePost(models.Model):
+    post_id = models.CharField(max_length=500)
+    username = models.CharField(max_length=100)
       
-      
+    def __str__(self):
+        return self.username
