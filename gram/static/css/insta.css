@@ -8,6 +8,11 @@
     background-size: contain;
     background-attachment: fixed;
     align-items: center;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
   .nav {
     position: absolute;
@@ -77,3 +82,8 @@
     color: #2b2b2b;
   }
 
+  .post{
+    border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 stretch;
+}

@@ -14,8 +14,8 @@
 <style>
 
     .container{
-      background-color: white;
-      border-radius: 4px;
+    background-color: white;
+    border-radius: 4px;
     padding-bottom: 5%;
     box-shadow: 2px 2px 3px 2px black;
     font-family: 'Architects Daughter', cursive;
@@ -33,7 +33,7 @@
         object-fit: cover;
         width: 280px;
         height: 300px;
-        
+            
     } 
 
    .media{
@@ -54,8 +54,7 @@
 
 <body>
     <nav class ="nav">
-        <div class="wrapper">
-
+        
             <div class="logo" style="padding-top: 8px;padding-right: 110px;">
                     <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="">
 
@@ -191,16 +190,17 @@
         <span><a class="hello" href="{% url 'logout' %}">Logout</a></span>
         
     </nav>
-    
-<div class="container">
+    <div class="status-wrapper">
+
+<div class="post">
     <div class="col-md-10">
         <div class="row">
        {% for post in images %}
             <div class="col-md-8">
                 <div class="media">
                     <img class="image-thumbnail" src="{{post.image.url}}" alt="">
-    
-                  
+
+
                 <div class="media footer" >
                     <a href="/like-post?post_id={{post.id}}">
                     <svg aria-label="Activity Feed" class="_8-yf5 " color="#262626" fill="#262626" height="22"
@@ -212,11 +212,11 @@
                    
                    </a>
                    {% if post.likes == 0 %}
-                   <p>No likes</p>
+                   <strong>No likes</strong>
                    {% elif post.likes == 1 %}
-                   <p>like by {{post.likes}} person</p>
+                <strong>liked by {{post.likes}} person</strong>
                    {% else %}
-                   <p>like by {{post.likes}} people</p>
+                <strong>likeed by {{post.likes}} people</strong>
                    {% endif %}
 
 
