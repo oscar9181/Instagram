@@ -5,8 +5,14 @@
 #### Description
 This is a social media app that  a user can have an account  post images like and comment
 
+#### Installation
+* Clone the repository Create a virtual environment Install Django and other requirements in my requirements.txt file in your repository folder Run the IP address on the browser
+
+
+
 #### User stories
   ##### As a user:
+   + User can register account in the application
    + Sign in to the application to start using.
    + Upload my pictures to the application
    + See my profile with all my pictures.
@@ -21,6 +27,8 @@ This is a social media app that  a user can have an account  post images like an
 * Bootstrap5
 * Python
 * Django
+
+
 
 # License
  MIT License
