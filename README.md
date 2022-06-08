@@ -5,7 +5,7 @@
 ## Description
 This is a social media app that  a user can have an account  post images like and comment.
 
-### Installation
+## Installation
 * Clone the repository Create a virtual environment Install Django and other requirements in my requirements.txt file in your repository folder Run the IP address on the browser
 
 
@@ -28,18 +28,19 @@ This is a social media app that  a user can have an account  post images like an
 * Python
 * Django
 
-### Running the apllication
+## Running the apllication
 
 * Creating the virtual environment
 
-  $ python3.9 -m venv --without-pip env
+    $ python3.9 -m venv --without-pip env
 
-  $ source env/bin/activate
+    $ source env/bin/activate
 
 *   Installing Django
-  $ python3.9 -m pip install Django
 
-  $ python3.9 -m pip install psycopg2
+    $ python3.9 -m pip install Django
+
+    $ python3.9 -m pip install psycopg2
 
 
 
