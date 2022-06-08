@@ -20,6 +20,18 @@ This is a social media app that  a user can have an account  post images like an
    + Follow other users and see their pictures on my timeline.
 
 
+# BDD
+ | Behaviour               |  Input description        |   Output  description                      |
+ | :-----------:           |:-----:                    | :-------------:                            | 
+ |  Upload image           |  image caption            |    The image will be posted in homepage    |   
+ |                         |                           |                                            |
+ |  Login, Signup or Logout|   Email, Password         |    User can either be loggedin,registered or  loggedout |
+ |like , comment on a photo|                           |   user will be able to like or comment on a photo               | 
+
+
+ 
+
+
 
 ## Technologies Used
 * HTML
@@ -28,7 +40,7 @@ This is a social media app that  a user can have an account  post images like an
 * Python
 * Django
 
-## Running the apllication
+## Running the application
 
 * Creating the virtual environment
 
