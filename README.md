@@ -28,6 +28,18 @@ This is a social media app that  a user can have an account  post images like an
 * Python
 * Django
 
+#### Running the apllication
+
+* Creating the virtual environment
+
+  $ python3.9 -m venv --without-pip env
+  $ source env/bin/activate
+
+* Installing Django
+
+  $ python3.9 -m pip install Django
+  $ python3.9 -m pip install psycopg2
+
 
 
 # License
