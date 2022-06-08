@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+
+
 urlpatterns = [
      path('',views.insta,name='instagram'),
     
@@ -9,6 +11,7 @@ urlpatterns = [
     path('logout/',views.logoutUser,name='logout'),
     path('NewPost/',views.post,name='post'),
     path('profile/',views.profile,name='profile'),
+    path('comment/<int:pk>/',views.posted,name='add_comment')
     
 ]
 

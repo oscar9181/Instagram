@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from.models import Post, Profile
+from.models import Comment, Post, Profile
 from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth import authenticate,login,logout
@@ -9,6 +9,8 @@ from django.contrib import messages
 from.forms import CreateUserForm, NewPostForm
 
 from django.contrib.auth.decorators import login_required
+
+
 
 
 @login_required(login_url='login')
@@ -74,6 +76,31 @@ def post(request):
         
     return render(request,'instagram/NewPost.html')
 
+@login_required(login_url='login')
+def posted(request, pk):
+    post = Post.objects.get(id=pk)
+    post_comments = post.comment_set.all().order_by('-created')
+
+    if request.method == 'POST':
+        print(request.POST.get('body'))
+        comment = Comment.objects.create(
+            user = request.user,
+            post = post,
+            body = request.POST.get('body')
+            
+        )
+        post.comments = post.comments + 1
+        post.save()
+        return redirect('post', pk=post.id)
+    username = request.user.username
+    post = Post.objects.get(id=pk)
+
+     
+    context = {'post_comments':post_comments} 
+    return render(request, 'instagram/add_comment.html', context)
+
+
+@login_required(login_url='login')
 def profile(request):
     
     profile = Profile.objects.get(user=request.user)

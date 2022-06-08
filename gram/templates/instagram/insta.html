@@ -180,6 +180,9 @@
                 {% if not post.comments.all %}
                      No Comments Yet...<a href="#">Add One</a>
                 {% else %}
+                <br/>
+                <a href="">Add Comment </a>
+                <br/>
                   {%  for comment in post.comments.all %}
                   <strong>
                      {{ comment.name }} {{ comment.date }}
@@ -189,6 +192,9 @@
                   {{ comment.body }}
                   {% endfor %}
                 {% endif %}
+                <br/>
+                <a href="{% url 'add_comment' post.pk %}">Add Comment </a>
+                <br/> 
                 </div>
             </div>
         </div>
