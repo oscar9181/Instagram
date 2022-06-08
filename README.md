@@ -1,16 +1,16 @@
-### Instagram
+## Instagram Oscar app
 
-#### Developer: Oscar Okola
+### Developer: Oscar Okola
 
-#### Description
-This is a social media app that  a user can have an account  post images like and comment
+## Description
+This is a social media app that  a user can have an account  post images like and comment.
 
-#### Installation
+### Installation
 * Clone the repository Create a virtual environment Install Django and other requirements in my requirements.txt file in your repository folder Run the IP address on the browser
 
 
 
-#### User stories
+## User stories
   ##### As a user:
    + User can register account in the application
    + Sign in to the application to start using.
@@ -21,23 +21,24 @@ This is a social media app that  a user can have an account  post images like an
 
 
 
-### Technologies Used
+## Technologies Used
 * HTML
 * CSS
 * Bootstrap5
 * Python
 * Django
 
-#### Running the apllication
+### Running the apllication
 
 * Creating the virtual environment
 
   $ python3.9 -m venv --without-pip env
+
   $ source env/bin/activate
 
-* Installing Django
-
+*   Installing Django
   $ python3.9 -m pip install Django
+
   $ python3.9 -m pip install psycopg2
 
 
